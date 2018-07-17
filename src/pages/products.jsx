@@ -24,8 +24,8 @@ class Products extends Component {
 	render() {
 		return (
 			<section>
-				<Header updateFilter={this.updateFilter} />
-				<Gallery filterBy={this.state.filterBy}/>
+				<Header updateFilter={ this.updateFilter } />
+				<Gallery filterBy={ this.state.filterBy }/>
 			</section>
 		);
 	}
