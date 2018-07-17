@@ -20,5 +20,12 @@ Build project:
 yarn build
 ```
 
+### Using ESLint
+I recommend using ESLint for consistent coding styles.
+
+In Visual Studio Code, an extension ESLint can be installed and enabled. I encourage turning on the following setting: `"eslint.autoFixOnSave": true`. It can be found under `Preferences > Settings`.
+* https://eslint.org/docs/user-guide/getting-started
+* https://eslint.org/docs/rules
+
 ## Authors
 * **Syn-Ee Wong** - wongsynee@gmail.com
