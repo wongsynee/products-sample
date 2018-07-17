@@ -27,5 +27,11 @@ In Visual Studio Code, an extension ESLint can be installed and enabled. I encou
 * https://eslint.org/docs/user-guide/getting-started
 * https://eslint.org/docs/rules
 
+### Using Styled Components
+Styled Components allows for writing CSS in JS, which is very handy for component based built. For further reading here are a list of links:
+* https://www.styled-components.com
+* https://www.styled-components.com/docs/basics
+* https://medium.com/styled-components
+
 ## Authors
 * **Syn-Ee Wong** - wongsynee@gmail.com
