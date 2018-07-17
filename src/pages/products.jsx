@@ -4,11 +4,27 @@ import Gallery from '../components/gallery';
 import '../theme/global-style';
 
 class Products extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            filterBy: 'All'
+        };
+
+        this.updateFilter = this.updateFilter.bind(this);
+    }
+
+    updateFilter(value) {
+        this.setState({
+            filterBy: value
+        });
+    }
+
     render() {
         return (
             <section>
-                <Header />
-                <Gallery />
+                <Header updateFilter={this.updateFilter} />
+                <Gallery filterBy={this.state.filterBy}/>
             </section>
         );
     }

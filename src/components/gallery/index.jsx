@@ -27,7 +27,7 @@ const ProductItem = styled.div`
     }
 `;
 
-const ProductLabelWrapper = styled.div`
+const ProductLabels = styled.div`
     position: absolute;
 `;
 
@@ -64,22 +64,26 @@ const ProductPrice = ProductHeading.extend`
 class Gallery extends Component {
     renderProduct() {
         const productItems = data.map((product) => {
-            return (
-                <ProductItem key={ product.index.toString() }>
-                    <img 
-                        src={ process.env.PUBLIC_URL + '/images/' + product.productImage }
-                        alt={ product.productName + ' image'}
-                    />
-                    <ProductLabelWrapper>
-                        { (product.isExclusive === true) ? <ProductLabel>Exclusive</ProductLabel> : '' }
-                        { (product.isSale === true) ? <ProductLabelSale>Sale</ProductLabelSale> : '' }
-                    </ProductLabelWrapper>
-                    <ProductContent>
-                        <ProductHeading>{ product.productName }</ProductHeading>
-                        <ProductPrice>{ product.price }</ProductPrice>
-                    </ProductContent>
-                </ProductItem>
-            );
+            if ((product.size.includes(this.props.filterBy)) || (this.props.filterBy === 'All')) {
+                return (
+                    <ProductItem key={ product.index.toString() }>
+                        <img 
+                            src={ process.env.PUBLIC_URL + '/images/' + product.productImage }
+                            alt={ product.productName + ' image'}
+                        />
+                        <ProductLabels>
+                            { (product.isExclusive === true) ? <ProductLabel>Exclusive</ProductLabel> : '' }
+                            { (product.isSale === true) ? <ProductLabelSale>Sale</ProductLabelSale> : '' }
+                        </ProductLabels>
+                        <ProductContent>
+                            <ProductHeading>{ product.productName }</ProductHeading>
+                            <ProductPrice>{ product.price }</ProductPrice>
+                        </ProductContent>
+                    </ProductItem>
+                );
+            } else {
+                return null;
+            }
         });
 
         return (

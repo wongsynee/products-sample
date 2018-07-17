@@ -16,12 +16,30 @@ const Title = styled.h1`
 `;
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            optionValue: ''
+        };
+
+        this.toggleSelect = this.toggleSelect.bind(this);
+    }
+
+    toggleSelect(event) {
+        event.preventDefault();
+        this.props.updateFilter(event.target.value);
+        this.setState({
+            optionValue: event.target.value
+        });
+    }
+
     render() {
         return (
             <HeaderStyled>
                 <Title>Women’s tops</Title>
-                <select>
-                    <option value="default">Filter by size</option>
+                <select onChange={this.toggleSelect} value={this.state.optionValue}>
+                    <option value="All">Filter by size</option>
                     <option value="XS">Extra-small</option>
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
