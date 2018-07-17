@@ -62,8 +62,11 @@ const ProductPrice = ProductHeading.extend`
 `;
 
 class Gallery extends Component {
+	// Function for rendering products in the gallery.
 	renderProduct() {
 		const productItems = data.map((product) => {
+			// Render specific products if `product.size` array contains the same value as props.
+			// Render all products if props is equals to `All`.
 			if ((product.size.includes(this.props.filterBy)) || (this.props.filterBy === 'All')) {
 				return (
 					<ProductItem key={ product.index.toString() }>

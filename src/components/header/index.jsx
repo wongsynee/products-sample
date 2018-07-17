@@ -26,6 +26,7 @@ class Header extends Component {
 		this.toggleSelect = this.toggleSelect.bind(this);
 	}
 
+	// Function for toggling between options under the select element. Sets a new state for `optionValue`.
 	toggleSelect(event) {
 		event.preventDefault();
 		this.props.updateFilter(event.target.value);

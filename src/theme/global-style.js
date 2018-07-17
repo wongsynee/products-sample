@@ -1,6 +1,7 @@
 import { injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 
+// A helper method from Styled Components to write global CSS. URL: https://www.styled-components.com/docs/api#injectglobal
 injectGlobal`
     ${styledNormalize}
 

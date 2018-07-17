@@ -14,6 +14,7 @@ class Products extends Component {
 		this.updateFilter = this.updateFilter.bind(this);
 	}
 
+	// Function for setting a new state for `filterBy` with the value being passed in.
 	updateFilter(value) {
 		this.setState({
 			filterBy: value
