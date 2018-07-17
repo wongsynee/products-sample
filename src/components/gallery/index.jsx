@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import data from '../../data/products.json'
+import data from '../../data/products.json';
 
 const ProductGallery = styled.div`
     display: flex;
@@ -62,44 +62,44 @@ const ProductPrice = ProductHeading.extend`
 `;
 
 class Gallery extends Component {
-    renderProduct() {
-        const productItems = data.map((product) => {
-            if ((product.size.includes(this.props.filterBy)) || (this.props.filterBy === 'All')) {
-                return (
-                    <ProductItem key={ product.index.toString() }>
-                        <img 
-                            src={ process.env.PUBLIC_URL + '/images/' + product.productImage }
-                            alt={ product.productName + ' image'}
-                        />
-                        <ProductLabels>
-                            { (product.isExclusive === true) ? <ProductLabel>Exclusive</ProductLabel> : '' }
-                            { (product.isSale === true) ? <ProductLabelSale>Sale</ProductLabelSale> : '' }
-                        </ProductLabels>
-                        <ProductContent>
-                            <ProductHeading>{ product.productName }</ProductHeading>
-                            <ProductPrice>{ product.price }</ProductPrice>
-                        </ProductContent>
-                    </ProductItem>
-                );
-            } else {
-                return null;
-            }
-        });
+	renderProduct() {
+		const productItems = data.map((product) => {
+			if ((product.size.includes(this.props.filterBy)) || (this.props.filterBy === 'All')) {
+				return (
+					<ProductItem key={ product.index.toString() }>
+						<img
+							src={ process.env.PUBLIC_URL + '/images/' + product.productImage }
+							alt={ product.productName + ' image'}
+						/>
+						<ProductLabels>
+							{ (product.isExclusive === true) ? <ProductLabel>Exclusive</ProductLabel> : '' }
+							{ (product.isSale === true) ? <ProductLabelSale>Sale</ProductLabelSale> : '' }
+						</ProductLabels>
+						<ProductContent>
+							<ProductHeading>{ product.productName }</ProductHeading>
+							<ProductPrice>{ product.price }</ProductPrice>
+						</ProductContent>
+					</ProductItem>
+				);
+			} else {
+				return null;
+			}
+		});
 
-        return (
-            <ProductGallery>
-                { productItems }
-            </ProductGallery>
-        );
-    }
+		return (
+			<ProductGallery>
+				{ productItems }
+			</ProductGallery>
+		);
+	}
 
-    render() {
-        return (
-            <div>
-                { this.renderProduct() }
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div>
+				{ this.renderProduct() }
+			</div>
+		);
+	}
 }
 
 export default Gallery;

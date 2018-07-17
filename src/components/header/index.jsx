@@ -16,39 +16,39 @@ const Title = styled.h1`
 `;
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-            optionValue: ''
-        };
+	constructor(props) {
+		super(props);
 
-        this.toggleSelect = this.toggleSelect.bind(this);
-    }
+		this.state = {
+			optionValue: ''
+		};
 
-    toggleSelect(event) {
-        event.preventDefault();
-        this.props.updateFilter(event.target.value);
-        this.setState({
-            optionValue: event.target.value
-        });
-    }
+		this.toggleSelect = this.toggleSelect.bind(this);
+	}
 
-    render() {
-        return (
-            <HeaderStyled>
-                <Title>Women’s tops</Title>
-                <select onChange={this.toggleSelect} value={this.state.optionValue}>
-                    <option value="All">Filter by size</option>
-                    <option value="XS">Extra-small</option>
-                    <option value="S">Small</option>
-                    <option value="M">Medium</option>
-                    <option value="L">Large</option>
-                    <option value="XL">Extra-large</option>
-                </select>
-            </HeaderStyled>
-        );
-    }
+	toggleSelect(event) {
+		event.preventDefault();
+		this.props.updateFilter(event.target.value);
+		this.setState({
+			optionValue: event.target.value
+		});
+	}
+
+	render() {
+		return (
+			<HeaderStyled>
+				<Title>Women’s tops</Title>
+				<select onChange={this.toggleSelect} value={this.state.optionValue}>
+					<option value="All">Filter by size</option>
+					<option value="XS">Extra-small</option>
+					<option value="S">Small</option>
+					<option value="M">Medium</option>
+					<option value="L">Large</option>
+					<option value="XL">Extra-large</option>
+				</select>
+			</HeaderStyled>
+		);
+	}
 }
 
 export default Header;
