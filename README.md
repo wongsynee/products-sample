@@ -10,7 +10,7 @@ Install dependencies:
 yarn
 ```
 
-Run project:
+Run project (The project should run by default on: http://localhost:3000/):
 ```sh
 yarn start
 ```
