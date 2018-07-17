@@ -13,6 +13,18 @@ const ProductItem = styled.div`
     text-align: center;
     padding: 0 30px;
     box-sizing: border-box;
+
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+
+    @media (min-width: 992px) {
+        width: 33.333%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 25%;
+    }
 `;
 
 const ProductLabelWrapper = styled.div`
